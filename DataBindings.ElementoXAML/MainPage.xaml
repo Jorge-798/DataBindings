@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBindings.ElementoXAML.MainPage">
+
+    <VerticalStackLayout>
+        <Border
+            Stroke="Gray"
+            Margin="16"
+            Padding="16">
+
+            <VerticalStackLayout>
+                <Label 
+                    Text="Escriba un texto: "/>
+                <Entry 
+                    BackgroundColor="LightGray"
+                    TextChanged="OnEntryTextChanged"
+                    x:Name="TextEntry"/>
+            </VerticalStackLayout>
+        </Border>
+
+        <VerticalStackLayout
+            Margin="16"
+            Padding="16">
+
+            <Label
+                Text="Aqui se ve lo que se esta escribiendo: "/>
+            <Label
+                Text="Aqui se va a ver lo que escribe el usuario"
+                Padding="0,16"
+                HorizontalOptions="Center"
+                FontAttributes="Italic"
+                x:Name="TextLabel"/>
+        </VerticalStackLayout>
+        
+    </VerticalStackLayout>
+
+</ContentPage>
