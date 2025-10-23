@@ -7,14 +7,11 @@
         public MainPage()
         {
             InitializeComponent();
-            TextLabel.Text = string.Empty;
+           
         }
 
         
-        private void OnEntryTextChanged(object sender, TextChangedEventArgs e)
-        {
-            TextLabel.Text = TextEntry.Text;
-        }
+       
     }
 
 }

@@ -14,7 +14,6 @@
                     Text="Escriba un texto: "/>
                 <Entry 
                     BackgroundColor="LightGray"
-                    TextChanged="OnEntryTextChanged"
                     x:Name="TextEntry"/>
             </VerticalStackLayout>
         </Border>
@@ -26,11 +25,10 @@
             <Label
                 Text="Aqui se ve lo que se esta escribiendo: "/>
             <Label
-                Text="Aqui se va a ver lo que escribe el usuario"
+                Text="{Binding Source={x:Reference TextEntry}, Path=Text}"
                 Padding="0,16"
                 HorizontalOptions="Center"
-                FontAttributes="Italic"
-                x:Name="TextLabel"/>
+                FontAttributes="Italic"/>
         </VerticalStackLayout>
         
     </VerticalStackLayout>
