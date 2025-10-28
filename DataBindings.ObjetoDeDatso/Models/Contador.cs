@@ -1,10 +1,14 @@
-﻿namespace DataBindings.ObjetoDeDatso.Models
+﻿using System.ComponentModel;
+
+namespace DataBindings.ObjetoDeDatso.Models
 {
-    public class Contador
+    public class Contador : INotifyPropertyChanged
     {
         private int _conteo;
 
-        public int Conteo
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        public int Conteo 
         {
             get => _conteo;
             set
@@ -12,10 +16,11 @@
               if (value != _conteo)
               {
                 _conteo = value;
+                OnPropertyChanged(nameof(Conteo));
               }
-            }
-            
+            }           
         }
+
         public Contador(int conteoinicial =0)
         {
             Conteo = conteoinicial;
@@ -31,5 +36,15 @@
             Conteo = 0;          
         } 
             
+        private void OnPropertyChanged(string propertyName)
+        {
+            // if (PropertyChanged != null)
+            //{
+            //  PropertyChanged(
+            //  this ,
+            //  new PropertyChangedEventArgs(propertyName));                
+            //}
+            PropertyChanged ?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

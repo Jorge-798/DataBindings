@@ -26,12 +26,11 @@
           Margin="0,24">
 
                 <Label
-              Text="0"
+              Text="{Binding Path=Conteo}"
            Margin="0,24"   
               HorizontalOptions="Center"
               FontSize="Large"
-              FontAttributes="Bold"
-              x:Name="ConteoLabel"/>
+              FontAttributes="Bold"/>
             </Border>
 
         </VerticalStackLayout>
