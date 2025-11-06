@@ -34,14 +34,16 @@
              Clicked="OnRemoveButtonCliked"/>
      </Grid>
 
-        <ListView
+        <CollectionView
             Grid.Row="1"
             BackgroundColor="Gray"
+            SelectionMode="Single"
+            EmptyView="No se ha agregado ningun origen de paquete"
             x:Name="OrigenesListView"
-            ItemSelected="OnSelectedOrigenesListView">
-            
-            
-        </ListView>
+            SelectionChanged="OnSelectedOrigenesListView">
+
+
+        </CollectionView>
        
      <Grid
        Grid.Row="2"

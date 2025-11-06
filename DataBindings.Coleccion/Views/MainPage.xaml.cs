@@ -71,14 +71,21 @@ public partial class MainPage : ContentPage
 		if (seleccionado != null)
 		{
             var indice = _origenes.IndexOf(seleccionado);
-			OrigenDelPaquete nuevoseleccionado;
+			OrigenDelPaquete? nuevoseleccionado;
 			if(indice < _origenes.Count - 1)
 			{
 				nuevoseleccionado = _origenes[indice + 1];
 			}
 			else
 			{
-				nuevoseleccionado = _origenes[_origenes.Count - 2];
+				if (_origenes.Count > 1)
+				{
+                   nuevoseleccionado = _origenes[_origenes.Count - 2];
+                }
+				else
+				{
+					nuevoseleccionado = null;
+				}
 			}
 		
 
@@ -86,14 +93,15 @@ public partial class MainPage : ContentPage
 			OrigenesListView.ItemsSource = null;
             OrigenesListView.ItemsSource = _origenes;
 			OrigenesListView.SelectedItem = nuevoseleccionado;
-			ActualizaCampoDeEntrada();
+			//ActualizaCampoDeEntrada();
         }				
     }
 
-    private void OnSelectedOrigenesListView(object sender, SelectedItemChangedEventArgs e)
-	{
-		ActualizaCampoDeEntrada();
-	}
+    private void OnSelectedOrigenesListView(object sender, SelectionChangedEventArgs e)
+    {
+        ActualizaCampoDeEntrada();
+
+    }
 
     private void OnActualizarButton_Clicked(object sender, EventArgs e)
     {
