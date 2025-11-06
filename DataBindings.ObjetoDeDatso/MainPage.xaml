@@ -26,7 +26,7 @@
           Margin="0,24">
 
                 <Label
-              Text="{Binding Path=Conteo}"
+              Text="{Binding Path=Conteo}" 
            Margin="0,24"   
               HorizontalOptions="Center"
               FontSize="Large"
